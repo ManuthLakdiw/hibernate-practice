@@ -4,12 +4,27 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
-    <!-- <property name="connection.username"/> -->
-    <!-- <property name="connection.password"/> -->
 
-    <!-- DB schema will be updated if needed -->
-    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+<!--     map mysql driver for hibernate-->
+  <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+<!--    api database eka select karanawa name ekak dila ehema name ekakin database ekak nethnm hadenna kiyala denawa-->
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_gdse_72?createDatabaseIfNotExist=true</property>
+
+<!--    set username-->
+    <property name="hibernate.connection.username">root</property>
+
+<!--    set password-->
+    <property name="hibernate.connection.password">Manu2006</property>
+
+<!--    mysql version eka denawa-->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <!--    entity walata adalawa tables create karaganna meka denawa-->
+    <property name="hibernate.hbm2ddl.auto">create</property>
+
+<!--    terminal ekedi query eka balaganna meka true karanawa terminal eke show wenawa-->
+    <property name="hibernate.show_sql">true</property>
+
   </session-factory>
 </hibernate-configuration>
