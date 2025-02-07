@@ -32,11 +32,18 @@ public class Main {
 //            System.out.println("Customer has not been saved");
 //        }
 
-        boolean check = deleteCustomer(1);
-        if (check) {
-            System.out.println("customer deleted successfully");
+//        boolean check = deleteCustomer(1);
+//        if (check) {
+//            System.out.println("customer deleted successfully");
+//        }else {
+//            System.out.println("customer not deleted successfully");
+//        }
+
+        boolean updated = updateCustomer(4, new Customer(5, "dimantha", "dimantha@gmail.com", "0713322324"));
+        if (updated) {
+            System.out.println("updated successfully");
         }else {
-            System.out.println("customer not deleted successfully");
+            System.out.println("failed to update customer");
         }
 
 
@@ -75,6 +82,25 @@ public class Main {
             Transaction transaction = session.beginTransaction();
             Customer customer = session.get(Customer.class, id);
             session.delete(customer);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            return false;
+        }finally {
+            session.close();
+        }
+    }
+
+    public static boolean updateCustomer(int id , Customer newCustomer){
+        Session session = FactoryConfiguration.getInstance().getSession();
+        try {
+            Customer customer = session.get(Customer.class, id);
+            Transaction transaction = session.beginTransaction();
+
+            customer.setName(newCustomer.getName());
+            customer.setEmail(newCustomer.getEmail());
+            customer.setPhone(newCustomer.getPhone());
+
             transaction.commit();
             return true;
         }catch (Exception e){
