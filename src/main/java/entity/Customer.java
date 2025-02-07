@@ -10,13 +10,14 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 
-@Entity // map to table
+@Entity // map to table (JPA Annotation - imported from jakartha ee)
 
-@Table(name = "customer_table") // default table name eka wenuwat name eka wenas kara customer_table kiyala
+@Table(name = "customer_table") // default table name eka wenuwat name eka wenas kara customer_table kiyala (JPA Annotation - imported from jakartha ee)
 public class Customer {  // default table name eka customer meka wenas karanna puluwan
 
-    @Id
-    private int id; // set this variable for table primary key
+    @Id // (JPA Annotation - imported from jakartha ee)
+    private int id; // set this variable for table primary key using @Id
+
     private String name;
     private String email;
 }
