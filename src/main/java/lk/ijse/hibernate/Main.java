@@ -6,6 +6,8 @@ import lombok.val;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -39,13 +41,17 @@ public class Main {
 //            System.out.println("customer not deleted successfully");
 //        }
 
-        boolean updated = updateCustomer(4, new Customer(5, "dimantha", "dimantha@gmail.com", "0713322324"));
-        if (updated) {
-            System.out.println("updated successfully");
-        }else {
-            System.out.println("failed to update customer");
-        }
+//        boolean updated = updateCustomer(4, new Customer(5, "dimantha", "dimantha@gmail.com", "0713322324"));
+//        if (updated) {
+//            System.out.println("updated successfully");
+//        }else {
+//            System.out.println("failed to update customer");
+//        }
 
+        List<Customer> customerList = getCustomerList();
+        for (Customer c : customerList) {
+            System.out.println(c);
+        }
 
     }
 
@@ -108,6 +114,18 @@ public class Main {
         }finally {
             session.close();
         }
+    }
+
+//    HQL -> Hibernate Query Language (Ex : from Customer)
+    public static List<Customer> getCustomerList(){
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        List<Customer> customers = session.createQuery(
+                "from Customer", // methana table name eka newei class eke ekiyanne object name ek denna
+                Customer.class
+        ).list();
+
+        return customers;
     }
 
 
