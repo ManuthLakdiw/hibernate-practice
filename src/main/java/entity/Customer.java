@@ -29,4 +29,8 @@ public class Customer {  // default table name eka customer meka wenas karanna p
     private String name;
     private String email;
     private String phone;
+
+    @Transient // for sensitive data
+    // non persist
+    private String cardNumber;
 }
