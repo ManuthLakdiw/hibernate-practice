@@ -21,8 +21,11 @@ public class Customer {  // default table name eka customer meka wenas karanna p
 //    @GeneratedValue(strategy = GenerationType.UUID) // random unique diga id ekak genarate karala denwa
 
 
+
     private int id; // set this variable for table primary key using @Id
 
+    @Column(name = "customer_name" , nullable = false) // mekedi wenne attribute name eken db
+    // eke colum eka hadena eka walakwala manual namak dewnawa
     private String name;
     private String email;
     private String phone;
