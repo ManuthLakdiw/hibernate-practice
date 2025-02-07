@@ -33,4 +33,10 @@ public class Customer {  // default table name eka customer meka wenas karanna p
     @Transient // for sensitive data
     // non persist
     private String cardNumber;
+
+    @Lob // large data or binary data
+    private String Description;
+
+
+    // image -> binaryData[] -> string ------------------> Database (image save in database)
 }
