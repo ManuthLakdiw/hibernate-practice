@@ -1,9 +1,7 @@
 package entity;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Data // meka athule getter , setter , toString thiyenawa
@@ -16,6 +14,13 @@ import lombok.*;
 public class Customer {  // default table name eka customer meka wenas karanna puluwan
 
     @Id // (JPA Annotation - imported from jakartha ee)
+
+
+    @GeneratedValue(strategy = GenerationType.AUTO) // id eka auto genarate wenwa
+//    @GeneratedValue(strategy = GenerationType.IDENTITY) // id eka manual denna oona
+//    @GeneratedValue(strategy = GenerationType.UUID) // random diga id ekak genarate karala denwa
+
+
     private int id; // set this variable for table primary key using @Id
 
     private String name;
