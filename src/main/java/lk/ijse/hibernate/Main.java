@@ -2,6 +2,7 @@ package lk.ijse.hibernate;
 
 import config.FactoryConfiguration;
 import entity.Customer;
+import entity.CustomerFullName;
 import lombok.val;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,11 +13,17 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
+        CustomerFullName customerFullName = new CustomerFullName("thi is customer full name");
+
         Customer customer = new Customer(
-                4,
-                "bbbbb",
-                "ccccc@gmail.com",
-                "04112141424"
+                10,
+                "10customer",
+                "c10@gmail.com",
+                "04112141424",
+                "0373756329576239756295",
+                "description",
+                customerFullName
+
         );
 
 
@@ -26,13 +33,13 @@ public class Main {
         Customer customer2 = getCustomer(5);
         System.out.println(customer2);
 
-//        boolean check = saveCustomer(customer);
-//        if (check) {
-//            System.out.println("Customer has been saved");
-//        }
-//        else {
-//            System.out.println("Customer has not been saved");
-//        }
+        boolean check = saveCustomer(customer);
+        if (check) {
+            System.out.println("Customer has been saved");
+        }
+        else {
+            System.out.println("Customer has not been saved");
+        }
 
 //        boolean check = deleteCustomer(1);
 //        if (check) {
@@ -47,11 +54,11 @@ public class Main {
 //        }else {
 //            System.out.println("failed to update customer");
 //        }
-
-        List<Customer> customerList = getCustomerList();
-        for (Customer c : customerList) {
-            System.out.println(c);
-        }
+//
+//        List<Customer> customerList = getCustomerList();
+//        for (Customer c : customerList) {
+//            System.out.println(c);
+//        }
 
     }
 
@@ -117,16 +124,16 @@ public class Main {
     }
 
 //    HQL -> Hibernate Query Language (Ex : from Customer)
-    public static List<Customer> getCustomerList(){
-        Session session = FactoryConfiguration.getInstance().getSession();
-
-        List<Customer> customers = session.createQuery(
-                "from Customer", // methana table name eka newei class eke ekiyanne object name ek denna
-                Customer.class
-        ).list();
-
-        return customers;
-    }
+//    public static List<Customer> getCustomerList(){
+//        Session session = FactoryConfiguration.getInstance().getSession();
+//
+//        List<Customer> customers = session.createQuery(
+//                "from Customer", // methana table name eka newei class eke ekiyanne object name ek denna
+//                Customer.class
+//        ).list();
+//
+//        return customers;
+//    }
 
 
 

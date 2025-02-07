@@ -39,4 +39,7 @@ public class Customer {  // default table name eka customer meka wenas karanna p
 
 
     // image -> binaryData[] -> string ------------------> Database (image save in database)
+
+    @Embedded
+    private CustomerFullName fullName;
 }
