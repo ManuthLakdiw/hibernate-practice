@@ -21,7 +21,10 @@
     <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
     <!--    entity walata adalawa tables create karaganna meka denawa-->
-    <property name="hibernate.hbm2ddl.auto">create</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+<!--    create dunnoth table aluthenma hadenawa ethakota
+ parana data penne na aluthen eka witharai penne  eka nisa update danwa-->
 
 <!--    terminal ekedi query eka balaganna meka true karanawa terminal eke show wenawa-->
     <property name="hibernate.show_sql">true</property>
