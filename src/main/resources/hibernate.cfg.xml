@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+
+<!--    Hibernate එක Database එකට connect වෙන්න ඕන JDBC Driver එක specify කරන property එක.-->
+    <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/demoHibernate?createDatabaseIfNotExist=true</property>
+
+    <property name="hibernate.connection.username">root</property>
+
+    <property name="hibernate.connection.password">Manu2006</property>
+
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+    <property name="show_sql">true</property>
+
+    <property name="hibernate.hbm2ddl.auto">create</property>
+
+
+    <!--    create -> Database table and schema නැවත create කරලා තියෙන data delete කරනවා. (use for texting)-->
+
+<!--    update -> Existing table එක modify කරනවා (එය already තිබ්බොත් data delete නොකර structure update කරනවා)-->
+
+<!--    create-drop -> Best for temporary tests, deletes data when stopping the programme-->
+
+<!--    validate -> Schema එක හරිද කියලා පරීක්ෂා කරනවා, හැබැයි කිසිම වෙනසක් කරන්නේ නෑ.-->
+<!--    Table names, Columns, Data types Hibernate එකේ තියෙන දේ Database එකේ-->
+<!--    තියෙන දේවල් එක්කම match වෙනවාද කියලා බලන එක.-->
+<!--    Schema එක correct නැත්නම් Error එකක් දෙනවා, හැබැයි කිසිම change එකක් apply වෙන්නේ නෑ.-->
+<!--    -->
+
+
+
+
+  </session-factory>
+</hibernate-configuration>
