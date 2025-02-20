@@ -14,4 +14,43 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+
+
+    <dependencies>
+
+<!--        ORM (Object Relational Mapping) features, and session management සඳහා අවශ්‍යයි.-->
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.0.0.Final</version>
+        </dependency>
+
+
+<!--        annotations & standard interface use කරන්න අවශ්‍යයි.-->
+        <dependency>
+            <groupId>jakarta.persistence</groupId>
+            <artifactId>jakarta.persistence-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+
+<!--        Hibernate එක MySQL database එකට connect කරගන්න JDBC Driver එක-->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+<!--        getters, setters, constructors) generate කරලා code එක clean කරන්න.-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+            <scope>provided</scope>
+        </dependency>
+
+
+
+    </dependencies>
+
 </project>
